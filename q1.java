@@ -13,13 +13,11 @@ public class BonusChecker {
         System.out.print("Enter Performance Rating (1-5): ");
         int rating = scanner.nextInt();
 
-        // Twist: Immediate rejection if attendance is below 60%
         if (attendance < 60) {
             System.out.println("Not Eligible: Attendance too low.");
             return;
         }
 
-        // Standard eligibility check
         if (years > 3 && attendance > 85) {
             int bonus = 0;
             
