@@ -14,7 +14,7 @@ public class RestaurantOrder {
         String itemName = "";
 
         switch (category) {
-            case 1: // Veg
+            case 1: 
                 System.out.println("\n--- Veg Menu ---");
                 System.out.println("1. Fried Rice (₹150)");
                 System.out.println("2. Noodles (₹120)");
@@ -29,7 +29,7 @@ public class RestaurantOrder {
                 }
                 break;
 
-            case 2: // Non-Veg
+            case 2: 
                 System.out.println("\n--- Non-Veg Menu ---");
                 System.out.println("1. Chicken Biryani (₹250)");
                 System.out.println("2. Grill Chicken (₹300)");
@@ -53,25 +53,22 @@ public class RestaurantOrder {
         int quantity = scanner.nextInt();
         double totalBill = pricePerItem * quantity;
         
-        scanner.nextLine(); // consume newline
+        scanner.nextLine(); 
         
         System.out.print("Enter Member Status (Gold/Silver/Normal): ");
         String status = scanner.nextLine().toLowerCase();
 
-        // Apply Discounts based on status
         switch (status) {
             case "gold":
-                totalBill = totalBill * 0.80; // 20% discount
-                // Extra Twist: Free dessert for high-value Gold customers
+                totalBill = totalBill * 0.80; 
                 if (totalBill > 2000) {
                     System.out.println("\n🎉 Congratulations! You get a FREE DESSERT with your order!");
                 }
                 break;
             case "silver":
-                totalBill = totalBill * 0.90; // 10% discount
+                totalBill = totalBill * 0.90; 
                 break;
             case "normal":
-                // 0% discount
                 break;
             default:
                 System.out.println("Unknown member status. No discount applied.");
