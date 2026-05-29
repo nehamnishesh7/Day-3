@@ -16,9 +16,9 @@ public class ElectricityBill {
         double bill = 0;
 
         switch (choice) {
-            case 1: // Domestic
+            case 1: 
                 if (units <= 100) {
-                    bill = 0; // Free
+                    bill = 0; 
                 } else if (units <= 300) {
                     bill = (units - 100) * 5;
                 } else {
@@ -26,7 +26,7 @@ public class ElectricityBill {
                 }
                 break;
                 
-            case 2: // Commercial
+            case 2: 
                 if (units < 200) {
                     bill = units * 10;
                 } else {
@@ -34,18 +34,18 @@ public class ElectricityBill {
                 }
                 break;
                 
-            case 3: // Industrial
-                bill = units * 20; // Normal charge
+            case 3:
+                bill = units * 20;
                 if (units > 500) {
                     System.out.print("Is power factor good? (true/false): ");
                     boolean goodPowerFactor = scanner.nextBoolean();
                     if (goodPowerFactor) {
-                        bill = bill * 0.90; // 10% discount
+                        bill = bill * 0.90;
                     }
                 }
                 break;
                 
-            default: // Twist: Invalid connection type
+            default: 
                 System.out.println("Invalid Connection Type");
                 System.exit(0);
         }
